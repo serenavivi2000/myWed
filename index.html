@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的第一個 AI 網站</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      background: #f4f8fc;
+      color: #243447;
+    }
+    header {
+      background: linear-gradient(135deg, #1686a7, #374ca6);
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+    header h1 { font-size: 36px; margin: 0 0 14px; }
+    header p { font-size: 18px; }
+    nav {
+      background: white;
+      text-align: center;
+      padding: 18px;
+    }
+    nav a {
+      color: #236b96;
+      text-decoration: none;
+      margin: 10px;
+      font-weight: bold;
+    }
+    main {
+      max-width: 1000px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+    h2 { text-align: center; color: #205c91; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .card {
+      background: white;
+      padding: 28px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px #00000012;
+      text-align: center;
+    }
+    .card h3 { color: #197fa0; }
+    .about {
+      background: white;
+      padding: 25px;
+      margin-top: 35px;
+      border-radius: 16px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      background: #243447;
+      color: white;
+      padding: 25px;
+      margin-top: 45px;
+    }
+    @media (max-width: 700px) {
+      header { padding: 45px 15px; }
+      header h1 { font-size: 26px; }
+      .cards { grid-template-columns: 1fr; }
+      nav a { display: inline-block; margin: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>歡迎來到我的第一個 AI 網站</h1>
+    <p>使用 ChatGPT + GitHub 完成的 RWD 網頁</p>
+  </header>
+  <nav>
+    <a href="#home">首頁</a>
+    <a href="#features">網站特色</a>
+    <a href="#about">關於本站</a>
+  </nav>
+  <main id="home">
+    <h2 id="features">網站特色</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🤖 AI 協助</h3>
+        <p>利用人工智慧產生網站程式碼。</p>
+      </div>
+      <div class="card">
+        <h3>📱 RWD 設計</h3>
+        <p>適合手機、平板及電腦瀏覽。</p>
+      </div>
+      <div class="card">
+        <h3>🌐 GitHub 發布</h3>
+        <p>透過 GitHub Pages 將網站公開。</p>
+      </div>
+    </div>
+    <section class="about" id="about">
+      <h2>關於這個網站</h2>
+      <p>這是我的 AI 網頁設計練習作品。</p>
+      <p>從建立儲存庫到完成網站，學習 AI 與 GitHub 的應用。</p>
+    </section>
+  </main>
+  <footer>我的第一個 GitHub 網站｜AI 網頁設計練習</footer>
+</body>
+</html>
