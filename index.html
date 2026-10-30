@@ -1,166 +1,1938 @@
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>不務正業 Coffee Bar</title>
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: Arial, "Microsoft JhengHei", sans-serif;
-  background: #f8f5ef;
-  color: #49382d;
-  line-height: 1.8;
-}
-header {
-  background: #eee5d8;
-  padding: 22px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo { font-size: 23px; font-weight: bold; }
-nav a {
-  color: #49382d;
-  text-decoration: none;
-  margin-left: 18px;
-}
-.hero {
-  min-height: 450px;
-  background: linear-gradient(135deg,#e9dccb,#f7f0e5,#d9c5ae);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 20px;
-}
-.hero h1 { font-size: 44px; margin-bottom: 15px; }
-.hero p { font-size: 18px; margin-bottom: 25px; }
-.btn {
-  display: inline-block;
-  background: #654b39;
-  color: white;
-  text-decoration: none;
-  padding: 12px 30px;
-  border-radius: 30px;
-}
-section { padding: 65px 8%; text-align: center; }
-h2 { font-size: 30px; margin-bottom: 12px; }
-.subtitle { color: #927b68; margin-bottom: 30px; }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 22px;
-  max-width: 1000px;
-  margin: auto;
-}
-.card {
-  background: #fffdf9;
-  padding: 30px 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px #49382d12;
-}
-.card .icon { font-size: 40px; }
-.card h3 { margin: 12px 0; }
-.about { background: #eee5d8; }
-.about-content { max-width: 750px; margin: auto; }
-.menu-list { max-width: 650px; margin: auto; }
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 5px;
-  border-bottom: 1px solid #d8c8b8;
-}
-.contact { background: #e8ddcf; }
-footer {
-  background: #49382d;
-  color: #f8f5ef;
-  text-align: center;
-  padding: 25px;
-}
-@media(max-width:700px) {
-  header { flex-direction: column; gap: 12px; }
-  nav a { margin: 0 6px; font-size: 13px; }
-  .hero h1 { font-size: 30px; }
-  .cards { grid-template-columns: 1fr; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不務正業 Coffee Bar | 白天咖啡，夜晚微醺</title>
+  <meta name="description" content="韓系高級咖啡廳與都會微醺酒吧。白天手沖精品咖啡與手工甜點，夜晚轉身為沉靜微醺調酒吧。在喧囂城市中，留給靈魂一處慢調棲所。">
+  <meta property="og:title" content="不務正業 Coffee Bar | 白天咖啡，夜晚微醺">
+  <meta property="og:description" content="韓系高級咖啡廳與都會微醺酒吧。白天手沖精品咖啡與手工甜點，夜晚轉身為沉靜微醺調酒吧。">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts: Cormorant Garamond (高級襯線), Noto Sans TC, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN (免安裝建置工具，開箱即用) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF7F2',
+              creamDark: '#F2ECE3',
+              gold: '#C5A880',
+              goldLight: '#DEC8AF',
+              goldHover: '#D4B68E',
+              brown: '#241A15',
+              brownDark: '#140F0D',
+              cardDark: '#1C1512',
+              borderLight: '#EDE5DA',
+              borderDark: '#2E221B'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', '"Noto Serif TC"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* 韓系極簡與高級排版樣式 */
+    html {
+      font-family: "Plus Jakarta Sans", "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .font-luxury {
+      font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+    }
+    /* 自訂捲軸樣式 */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.03);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A880;
+      border-radius: 9999px;
+    }
+    /* 玻璃擬態光澤 */
+    .glass-light {
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .glass-dark {
+      background: rgba(20, 15, 13, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body>
-<header>
-  <div class="logo">不務正業 Coffee Bar</div>
-  <nav>
-    <a href="#home">首頁</a>
-    <a href="#about">品牌故事</a>
-    <a href="#menu">咖啡品項</a>
-    <a href="#contact">聯絡我們</a>
-  </nav>
-</header>
+<body class="bg-[#FAF7F2] text-[#241A15] transition-colors duration-700 antialiased selection:bg-[#C5A880]/30 selection:text-[#1C1512]" id="app-body">
 
-<main>
-<section class="hero" id="home">
-  <div>
-    <h1>不務正業 Coffee Bar</h1>
-    <p>生活不必太匆忙，讓咖啡陪你慢下來。</p>
-    <a class="btn" href="#menu">探索咖啡</a>
-  </div>
-</section>
+  <!-- ===============================
+       頂部導航列 (Navigation Header)
+       =============================== -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD5] transition-colors duration-500" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      
+      <!-- 品牌標誌 (Wordmark) -->
+      <a href="#" class="flex items-center gap-2 group whitespace-nowrap shrink-0">
+        <span class="font-luxury text-2xl md:text-3xl font-semibold tracking-wider transition-colors group-hover:text-[#C5A880]">
+          不務正業 <span class="font-light text-xs md:text-sm tracking-widest uppercase opacity-75">Coffee Bar</span>
+        </span>
+      </a>
 
-<section id="about">
-  <h2>OUR STORY</h2>
-  <p class="subtitle">關於不務正業</p>
-  <div class="about-content">
-    <p>不務正業 Coffee Bar 是一間結合咖啡與生活美學的質感咖啡館。我們相信，生活不只有工作與忙碌，也應該保留一點時間，享受咖啡香氣，感受日常中的小小幸福。</p>
-    <p>以韓系簡約風格為設計靈感，透過奶油白與大地色系，打造舒適、溫暖且自在的空間。</p>
-  </div>
-</section>
+      <!-- 電腦版導覽列 -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <a href="#story" class="transition-colors hover:text-[#C5A880] whitespace-nowrap">品牌故事</a>
+        <a href="#reviews" class="transition-colors hover:text-[#C5A880] whitespace-nowrap">顧客好評</a>
+        <a href="#menu" class="transition-colors hover:text-[#C5A880] whitespace-nowrap">精選菜單</a>
+        <a href="#spaces" class="transition-colors hover:text-[#C5A880] whitespace-nowrap">空間美學</a>
+        <a href="#atmosphere" class="transition-colors hover:text-[#C5A880] whitespace-nowrap">晝夜體驗</a>
+        <a href="#contact" class="transition-colors hover:text-[#C5A880] whitespace-nowrap">門市與預約</a>
+      </nav>
 
-<section style="background:#f1ebe2">
-  <h2>OUR FEATURES</h2>
-  <p class="subtitle">品牌特色</p>
-  <div class="cards">
-    <div class="card">
-      <div class="icon">☕</div>
-      <h3>精選咖啡</h3>
-      <p>嚴選咖啡豆，呈現每一杯咖啡的香醇風味。</p>
+      <!-- 右側互動控制區 -->
+      <div class="flex items-center gap-3 shrink-0">
+        
+        <!-- 晝夜氛圍切換按鈕 -->
+        <button 
+          onclick="toggleDayNight()" 
+          id="mood-btn" 
+          class="px-3.5 py-2 rounded-full border border-[#DEC8AF] bg-white text-[#5D4638] text-xs font-medium flex items-center gap-1.5 shadow-xs hover:border-[#C5A880] transition-all"
+          title="切換日夜氛圍模式"
+          aria-label="切換日夜氛圍模式"
+        >
+          <span id="mood-icon">
+            <svg class="w-4 h-4 text-[#C5A880]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          </span>
+          <span id="mood-text" class="hidden sm:inline">日光模式</span>
+        </button>
+
+        <!-- 品味清單 / 點單試算浮動按鈕 -->
+        <button 
+          onclick="toggleCartDrawer()" 
+          id="cart-btn"
+          class="relative p-2.5 rounded-full border border-[#E5DDD2] bg-white text-[#241A15] hover:border-[#C5A880] transition-colors shadow-xs" 
+          title="開啟品味清單"
+          aria-label="開啟品味清單"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span id="cart-badge" class="hidden absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#C5A880] text-[#1C1512] font-bold text-[11px] rounded-full flex items-center justify-center">0</span>
+        </button>
+
+        <!-- 主要線上預約訂位按鈕 -->
+        <button 
+          onclick="openReservationModal()" 
+          class="hidden sm:inline-flex px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-[#1C1512] bg-[#C5A880] hover:bg-[#D4B68E] rounded-full transition-colors shadow-xs whitespace-nowrap"
+        >
+          線上預約訂位
+        </button>
+
+        <!-- 手機版選單漢堡圖示 -->
+        <button 
+          onclick="toggleMobileMenu()" 
+          id="mobile-menu-btn"
+          class="md:hidden p-2 text-inherit" 
+          aria-label="開啟選單"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+
     </div>
-    <div class="card">
-      <div class="icon">🤎</div>
-      <h3>質感空間</h3>
-      <p>奶油白與大地色系，營造舒適的韓系氛圍。</p>
+
+    <!-- 手機版下拉選單 -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 py-6 border-b border-[#E8DDD2] bg-[#F5EFEB] flex-col gap-4 text-base font-medium tracking-wide transition-colors">
+      <a href="#story" onclick="toggleMobileMenu()" class="py-2 border-b border-black/5">品牌故事</a>
+      <a href="#reviews" onclick="toggleMobileMenu()" class="py-2 border-b border-black/5">顧客好評</a>
+      <a href="#menu" onclick="toggleMobileMenu()" class="py-2 border-b border-black/5">精選菜單</a>
+      <a href="#spaces" onclick="toggleMobileMenu()" class="py-2 border-b border-black/5">空間美學</a>
+      <a href="#atmosphere" onclick="toggleMobileMenu()" class="py-2 border-b border-black/5">晝夜體驗</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="py-2 border-b border-black/5">門市與預約</a>
+      <div class="pt-2">
+        <button onclick="openReservationModal(); toggleMobileMenu();" class="w-full py-3 rounded-full text-center bg-[#C5A880] text-[#1C1512] font-semibold text-xs tracking-wider uppercase">
+          立即線上預約訂位
+        </button>
+      </div>
     </div>
-    <div class="card">
-      <div class="icon">🌿</div>
-      <h3>慢活日常</h3>
-      <p>享受片刻寧靜，讓每一天都有自己的節奏。</p>
+  </header>
+
+  <!-- ===============================
+       主視覺首頁區 (Hero Section)
+       =============================== -->
+  <section class="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- 左欄：標題與品牌主張 -->
+        <div class="lg:col-span-5 flex flex-col justify-center">
+          <div class="flex items-center gap-2 text-xs tracking-widest uppercase text-[#C5A880] mb-4 font-medium">
+            <span>Korean High-End Café</span>
+            <span>·</span>
+            <span>Urban Speakeasy</span>
+            <span>·</span>
+            <span>Taipei</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-luxury font-normal leading-[1.15] tracking-tight mb-6" style="text-wrap: balance;">
+            白天咖啡，<br>夜晚微醺。
+          </h1>
+
+          <p class="text-base sm:text-lg leading-relaxed mb-8 max-w-xl font-light text-[#5B483D] transition-colors" id="hero-desc">
+            誰說生活只能有一種正經模樣？在白晝的奶油色光影裡品嚐一杯極萃手沖，待夜幕降臨，琥珀色燈光亮起，化身為撫慰靈魂的都會微醺酒吧。專注於不妥協的品味，打破常規，不務正業。
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 mb-10">
+            <a href="#menu" id="hero-btn-menu" class="px-8 py-3.5 rounded-full bg-[#1C1512] text-[#FAF7F2] text-sm font-medium tracking-wider hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
+              <span>探索精選菜單</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+            <button onclick="openReservationModal()" id="hero-btn-book" class="px-8 py-3.5 rounded-full border border-[#BCA17E] text-[#8C6D45] text-sm font-medium tracking-wider hover:bg-[#BCA17E]/10 transition-colors">
+              預約今日席位
+            </button>
+          </div>
+
+          <!-- 安靜的信任標記 (Zero-pill discipline) -->
+          <div class="pt-6 border-t border-[#EAE1D7] flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium tracking-wider uppercase text-[#7A6A5E] transition-colors" id="hero-badges">
+            <span>100% 莊園單品豆</span>
+            <span>·</span>
+            <span>日韓法式手作甜點</span>
+            <span>·</span>
+            <span>原創特調調酒</span>
+            <span>·</span>
+            <span>安和商圈靜巷</span>
+          </div>
+        </div>
+
+        <!-- 右欄：店內主視覺實景照 -->
+        <div class="lg:col-span-7">
+          <div class="relative group rounded-3xl overflow-hidden shadow-2xl border border-black/5 aspect-[16/10] bg-[#EAE2D7]">
+            <img 
+              src="./src/assets/images/hero_coffee_bar_1792862145845.jpg" 
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';"
+              alt="不務正業 Coffee Bar 空間實景" 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8 text-white">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-[#E5D2BA] mb-1">Architecture & Space</p>
+                  <h3 class="text-xl md:text-2xl font-luxury font-medium">奶油白與深胡桃木的優雅協奏</h3>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-white/80 block">營業時段</span>
+                  <span class="font-mono text-sm tracking-wider text-[#E5D2BA]">10:00 - 01:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================
+       品牌故事區 (Brand Story)
+       =============================== -->
+  <section id="story" class="py-20 md:py-28 border-t border-[#ECE2D6] bg-[#F5EFEB] transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-16">
+        <div class="text-xs uppercase tracking-widest text-[#C5A880] mb-2 font-medium">Philosophy & Origin</div>
+        <h2 class="text-3xl md:text-5xl font-luxury font-normal leading-tight" style="text-wrap: balance;">
+          關於「不務正業」：<br>一場對質感生活的溫柔反叛
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6 text-base md:text-lg font-light leading-relaxed text-[#4A3B31] transition-colors" id="story-content">
+          <p>
+            在都會忙碌節奏裡，人們總被社會時鐘催促著維持所謂的「正業」——朝九晚五的會議、無止境的行事曆。然而，靈魂真正感到鮮活的瞬間，往往發生在那些「偏離軌道」的閒暇時光。
+          </p>
+          <p>
+            「不務正業 Coffee Bar」因此誕生。我們將對手沖精品咖啡的偏執、對韓系簡約空間的美學沉澱，以及入夜後對威士忌與草本雞尾酒的調研，揉合在同一個場域。
+          </p>
+          <p>
+            白天，陽光穿透奶油白紗簾，咖啡師以精準秒數手沖單品，陪伴你專注文思或安靜發呆；日落六點之後，暗香浮動，調酒師端出洗淨疲憊的原創特調。<strong>不務正業，是我們給這個城市最體貼的暫停鍵。</strong>
+          </p>
+
+          <div class="pt-4 grid grid-cols-3 gap-6 text-center border-t border-black/10" id="story-stats">
+            <div>
+              <div class="font-luxury text-2xl md:text-3xl font-semibold text-[#C5A880]">01</div>
+              <div class="text-xs tracking-wider uppercase mt-1 opacity-80">自烘莊園精品</div>
+            </div>
+            <div>
+              <div class="font-luxury text-2xl md:text-3xl font-semibold text-[#C5A880]">02</div>
+              <div class="text-xs tracking-wider uppercase mt-1 opacity-80">極致半熟手作</div>
+            </div>
+            <div>
+              <div class="font-luxury text-2xl md:text-3xl font-semibold text-[#C5A880]">03</div>
+              <div class="text-xs tracking-wider uppercase mt-1 opacity-80">茶酒原創特調</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="rounded-2xl overflow-hidden aspect-[3/4] bg-[#E5DDD2] shadow-lg">
+            <img 
+              src="./src/assets/images/specialty_coffee_1792862146757.jpg" 
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80';"
+              alt="咖啡手沖特寫" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            >
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[3/4] bg-[#E5DDD2] shadow-lg mt-8">
+            <img 
+              src="./src/assets/images/signature_cocktail_1792862146619.jpg" 
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80';"
+              alt="微醺調酒特寫" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            >
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===============================
+       顧客好評分享區 (Customer Reviews)
+       =============================== -->
+  <section id="reviews" class="py-20 md:py-28 border-t border-[#ECE2D6] transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- 區塊標題與控制器 -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="flex items-center gap-2 text-xs tracking-widest uppercase text-[#C5A880] mb-2 font-medium">
+            <span>Guest Echoes & Stories</span>
+            <span>·</span>
+            <span>Real Testimonials</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-luxury font-normal leading-tight" style="text-wrap: balance;">
+            顧客好評分享 · 遇見真實共鳴
+          </h2>
+          <p class="mt-3 text-sm md:text-base font-light text-[#6D5A4E] max-w-2xl transition-colors" id="reviews-desc">
+            走進不務正業的每段片刻，都是都市裡一首溫柔的慢調留白。無論是在白晝專注品嚐手沖，或入夜在微醺燭光中卸下一日疲憊。
+          </p>
+        </div>
+
+        <!-- 控制欄：評分指標、數量切換、隨機換一批 -->
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <!-- 評分指示器 -->
+          <div class="px-4 py-2 rounded-full border border-[#E5DDD2] bg-white text-xs flex items-center gap-2.5 shadow-xs transition-colors" id="review-score-badge">
+            <div class="flex items-center text-[#C5A880]">★★★★★</div>
+            <span class="font-mono font-semibold text-[#C5A880]">5.0</span>
+            <span class="opacity-40">|</span>
+            <span class="opacity-75 font-light">520+ 則真實好評</span>
+          </div>
+
+          <!-- 3則 / 4則 切換按鈕 -->
+          <div class="p-1 rounded-full border border-[#E5DDD2] bg-white flex items-center text-xs transition-colors" id="review-count-wrapper">
+            <button onclick="setReviewCount(3)" id="btn-count-3" class="px-3 py-1 rounded-full font-medium text-[#6D5A4E] transition-all">3則精選</button>
+            <button onclick="setReviewCount(4)" id="btn-count-4" class="px-3 py-1 rounded-full font-semibold bg-[#C5A880] text-[#1C1512] transition-all">4則精選</button>
+          </div>
+
+          <!-- 隨機換一批按鈕 -->
+          <button 
+            onclick="shuffleReviews()" 
+            id="btn-shuffle-reviews"
+            class="px-3.5 py-2 rounded-full border border-[#E5DDD2] bg-white text-xs font-medium text-[#C5A880] hover:border-[#C5A880] transition-colors flex items-center gap-1.5 shadow-xs" 
+            title="隨機換一批好評"
+          >
+            <svg class="w-3.5 h-3.5 transition-transform" id="shuffle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            <span>隨機換一批</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 好評卡片網格 (動態渲染) -->
+      <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-opacity duration-300">
+        <!-- 由 JavaScript 動態生成顧客好評卡片 -->
+      </div>
+
+      <!-- 底部信任背書 -->
+      <div class="mt-12 text-center text-xs tracking-wider uppercase font-light text-[#8C7B6E] transition-colors" id="reviews-kicker">
+        <span>Google 評價 4.9 星好評保證</span>
+        <span class="mx-2">·</span>
+        <span>安和靜巷專屬時光</span>
+        <span class="mx-2">·</span>
+        <a href="#contact" class="text-[#C5A880] font-medium hover:underline inline-flex items-center gap-1">
+          立即預約您的專屬體驗 →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===============================
+       精選菜單與風味特調 (Menu)
+       =============================== -->
+  <section id="menu" class="py-20 md:py-28 border-t border-[#ECE2D6]">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="text-xs uppercase tracking-widest text-[#C5A880] mb-2 font-medium">Artisanal Offerings</div>
+          <h2 class="text-3xl md:text-5xl font-luxury font-normal">精選菜單與風味特調</h2>
+          <p class="mt-2 text-sm md:text-base font-light text-[#6D5A4E] transition-colors" id="menu-desc">
+            手沖精品咖啡、韓系手作甜點與夜晚微醺調酒，完整標示商品名稱、圖片與價格。
+          </p>
+        </div>
+
+        <!-- 菜單即時搜尋框 -->
+        <div class="relative w-full md:w-72">
+          <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input 
+            type="text" 
+            id="menu-search-input" 
+            oninput="handleSearchMenu(this.value)"
+            placeholder="搜尋品名、材料或風味..."
+            class="w-full pl-10 pr-4 py-2.5 text-xs rounded-full border border-[#E0D5C7] bg-white outline-none focus:border-[#C5A880] shadow-xs transition-colors"
+          >
+        </div>
+      </div>
+
+      <!-- 分類分頁標籤 (Segmented Tabs) -->
+      <div class="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-black/5" id="category-tabs">
+        <button onclick="setMenuCategory('all')" class="cat-pill px-4 py-2 text-xs font-semibold rounded-full bg-[#C5A880] text-[#1C1512] shadow-xs" data-cat="all">全部品項 All</button>
+        <button onclick="setMenuCategory('coffee')" class="cat-pill px-4 py-2 text-xs font-medium rounded-full bg-[#F2ECE3] text-[#5C4A3E] hover:text-[#241A15]" data-cat="coffee">手沖與義式精品 Coffee</button>
+        <button onclick="setMenuCategory('dessert')" class="cat-pill px-4 py-2 text-xs font-medium rounded-full bg-[#F2ECE3] text-[#5C4A3E] hover:text-[#241A15]" data-cat="dessert">韓系手作甜點 Sweets</button>
+        <button onclick="setMenuCategory('cocktail')" class="cat-pill px-4 py-2 text-xs font-medium rounded-full bg-[#F2ECE3] text-[#5C4A3E] hover:text-[#241A15]" data-cat="cocktail">夜間微醺調酒 Cocktails</button>
+        <button onclick="setMenuCategory('bites')" class="cat-pill px-4 py-2 text-xs font-medium rounded-full bg-[#F2ECE3] text-[#5C4A3E] hover:text-[#241A15]" data-cat="bites">主廚佐酒輕食 Bites</button>
+      </div>
+
+      <!-- 菜單商品網格 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+        <!-- 由 JavaScript 動態生成所有 12 項完整商品卡片 -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===============================
+       空間美學與氛圍 (Space Aesthetics)
+       =============================== -->
+  <section id="spaces" class="py-20 md:py-28 border-t border-[#ECE2D6] bg-[#F5EFEB] transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-12">
+        <div class="text-xs uppercase tracking-widest text-[#C5A880] mb-2 font-medium">Spatial Atmosphere</div>
+        <h2 class="text-3xl md:text-5xl font-luxury font-normal leading-tight">韓系極簡與都會微醺的空間設計</h2>
+        <p class="mt-2 text-sm text-[#6D5A4E] transition-colors" id="space-sub-desc">
+          每一處弧線轉角、燈具照度與座椅織品，皆經過精心丈量，提供恰到好處的私密與舒展感。
+        </p>
+      </div>
+
+      <!-- 空間切換頁籤 -->
+      <div class="flex flex-wrap gap-3 mb-10" id="space-tabs">
+        <button onclick="switchSpace('sunlit-bar')" id="space-btn-sunlit-bar" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-[#C5A880] text-[#1C1512] shadow-sm">奶油白日光吧台</button>
+        <button onclick="switchSpace('velvet-lounge')" id="space-btn-velvet-lounge" class="px-5 py-2.5 rounded-full text-xs font-medium bg-white text-[#5E4C40] hover:text-[#241A15]">原木漫活沙發區</button>
+        <button onclick="switchSpace('amber-nook')" id="space-btn-amber-nook" class="px-5 py-2.5 rounded-full text-xs font-medium bg-white text-[#5E4C40] hover:text-[#241A15]">夜幕琥珀微醺私密座</button>
+      </div>
+
+      <!-- 空間焦點展示區 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-7 rounded-3xl overflow-hidden aspect-[16/10] shadow-xl border border-black/5 bg-[#EAE2D7]">
+          <img 
+            id="space-image" 
+            src="./src/assets/images/hero_coffee_bar_1792862145845.jpg" 
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';"
+            alt="空間實景展示" 
+            class="w-full h-full object-cover transition-all duration-700"
+          >
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col justify-center space-y-6">
+          <div>
+            <span id="space-subtitle" class="text-xs uppercase tracking-widest text-[#C5A880] font-mono">Sunlit Cream Bar & Counter</span>
+            <h3 id="space-title" class="text-2xl md:text-3xl font-luxury font-medium mt-1">奶油白日光吧台</h3>
+          </div>
+
+          <p id="space-description" class="text-base font-light leading-relaxed text-[#504035] transition-colors">
+            清晨與午後，日光從大片落地窗傾瀉而下。弧形奶油白磨石牆面搭配深色胡桃木與香檳金飾條，近距離感受咖啡師手沖水流的慢調節奏。
+          </p>
+
+          <div class="p-5 rounded-2xl border border-[#E6DDD1] bg-white space-y-3 text-xs transition-colors" id="space-card-info">
+            <div class="flex items-center justify-between">
+              <span class="opacity-60">氛圍光影：</span>
+              <span id="space-atmosphere" class="font-medium text-[#C5A880]">柔和日光 · 輕爵士 · 咖啡香氣漫溢</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="opacity-60">席位規劃：</span>
+              <span id="space-capacity" class="font-medium">8席（附高腳軟包皮革座）</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="opacity-60">適合情境：</span>
+              <span id="space-ideal" class="font-medium">個人沈浸品咖、觀賞咖啡師手沖、質感工作</span>
+            </div>
+          </div>
+
+          <div>
+            <button onclick="bookThisSpace()" class="px-6 py-3 rounded-full bg-[#C5A880] hover:bg-[#D4B68E] text-[#1C1512] font-semibold text-xs tracking-wider transition-colors inline-flex items-center gap-2 shadow-xs">
+              <span>預約此空間席位</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===============================
+       晝夜氛圍流轉 (Dual Experience)
+       =============================== -->
+  <section id="atmosphere" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="text-xs uppercase tracking-widest text-[#C5A880] mb-2 font-medium">Dual Experience</div>
+        <h2 class="text-3xl md:text-5xl font-luxury font-normal">白天咖啡，夜晚微醺</h2>
+        <p class="mt-2 text-sm text-[#6D5A4E] transition-colors" id="atmo-sub">營業時間 10:00 - 01:00，雙重風格自然轉換</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- 白晝卡片 -->
+        <div class="p-8 md:p-10 rounded-3xl bg-white border border-[#E7DDD0] shadow-xs transition-colors" id="atmo-day-card">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2 text-[#C5A880]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              <span class="font-mono text-sm tracking-widest font-semibold uppercase">10:00 - 18:00</span>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-[#A69688]">Daytime Vibe</span>
+          </div>
+
+          <h3 class="text-2xl font-luxury font-medium mb-3">白晝 · 奶油日光與極萃手沖</h3>
+          <p class="text-sm leading-relaxed mb-6 font-light text-[#5E4D41] transition-colors" id="atmo-day-desc">
+            陽光傾灑，現磨手沖單品咖啡、生燕麥厚拿鐵，佐以現烤流心巴斯克與酥脆可朗芙。適合專注文思或寧靜發呆。
+          </p>
+
+          <div class="space-y-2.5 text-xs opacity-85 border-t border-black/5 pt-4">
+            <div class="flex items-center gap-2">
+              <span class="text-[#C5A880] font-bold">✓</span>
+              <span>提供單品試飲聞香杯體驗</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#C5A880] font-bold">✓</span>
+              <span>充足充電座與安靜筆電友善座位</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#C5A880] font-bold">✓</span>
+              <span>每日限量新鮮手作韓風法式甜點</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 入夜卡片 -->
+        <div class="p-8 md:p-10 rounded-3xl bg-[#F2EAE0] border border-[#DFCFC0] shadow-xs transition-colors" id="atmo-night-card">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2 text-[#C5A880]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+              <span class="font-mono text-sm tracking-widest font-semibold uppercase">18:00 - 01:00</span>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-[#A69688]">Nighttime Vibe</span>
+          </div>
+
+          <h3 class="text-2xl font-luxury font-medium mb-3">入夜 · 琥珀微醺與草本沉醉</h3>
+          <p class="text-sm leading-relaxed mb-6 font-light text-[#5E4D41] transition-colors" id="atmo-night-desc">
+            燈光降暗，爵士流淌，品味融合咖啡澄清技術的原創特調與現刨黑松露佐酒小點，洗滌都會一整天的喧囂。
+          </p>
+
+          <div class="space-y-2.5 text-xs opacity-85 border-t border-black/5 pt-4">
+            <div class="flex items-center gap-2">
+              <span class="text-[#C5A880] font-bold">✓</span>
+              <span>咖啡與烈酒交融的原創 Signature 雞尾酒</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#C5A880] font-bold">✓</span>
+              <span>沉浸式私密低光源卡座包廂</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#C5A880] font-bold">✓</span>
+              <span>現刨黑松露脆薯與伊比利生火腿輕食</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===============================
+       門市資訊與線上預約 (Contact & Reservation)
+       =============================== -->
+  <section id="contact" class="py-20 md:py-28 border-t border-[#ECE2D6] bg-[#F5EFEB] transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- 左欄：門市資訊 -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <div class="text-xs uppercase tracking-widest text-[#C5A880] mb-2 font-medium">Visit & Contact</div>
+            <h2 class="text-3xl md:text-5xl font-luxury font-normal">門市資訊與預約</h2>
+            <p class="mt-3 text-sm text-[#6D5A4E] leading-relaxed transition-colors" id="contact-sub">
+              歡迎蒞臨品味生活。日間提供安靜品咖時光，夜間席位建議提早預訂。
+            </p>
+          </div>
+
+          <div class="space-y-5 text-sm">
+            <!-- 地址 -->
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-full bg-[#C5A880]/15 text-[#C5A880] shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">門市地址</h4>
+                <p class="opacity-80 font-light">台北市大安區光復南路280巷24號1樓</p>
+                <p class="text-xs opacity-60 mt-1 font-light">捷運國父紀念館站 2 號出口步行 3 分鐘 / 忠孝敦化站步行 6 分鐘</p>
+              </div>
+            </div>
+
+            <!-- 營業時段 -->
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-full bg-[#C5A880]/15 text-[#C5A880] shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">營業時段</h4>
+                <p class="opacity-80 font-light">週一至週日 10:00 - 01:00</p>
+                <div class="text-xs opacity-60 mt-1 font-light space-y-0.5">
+                  <p>· 白天咖啡手沖與甜點：10:00 - 18:00</p>
+                  <p>· 夜間微醺調酒與輕食：18:00 - 01:00</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 電話與社群 -->
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-full bg-[#C5A880]/15 text-[#C5A880] shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">聯絡專線 & 社群</h4>
+                <p class="opacity-80 font-mono">02-2775-8890</p>
+                <p class="text-xs opacity-60 mt-1 font-light">Instagram: @buwu_coffeebar · LINE: @buwubar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右欄：席位線上預約表單 -->
+        <div class="lg:col-span-7">
+          <div class="p-8 md:p-10 rounded-3xl bg-white border border-[#E8DFD3] shadow-md transition-colors" id="booking-card">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-black/5" id="booking-card-header">
+              <div>
+                <h3 class="text-xl font-luxury font-medium">即時席位預約</h3>
+                <p class="text-xs opacity-60 mt-0.5">系統將即時為您保留專屬席位並生成預約憑證</p>
+              </div>
+              <span class="text-[#C5A880] text-xl">✦</span>
+            </div>
+
+            <form onsubmit="handleReservationSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium mb-1 opacity-80">預約日期 Date</label>
+                  <input type="date" id="book-date" required class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880] transition-colors">
+                </div>
+                <div>
+                  <label class="block text-xs font-medium mb-1 opacity-80">預約時段 Time Slot</label>
+                  <select id="book-time" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880] transition-colors">
+                    <optgroup label="日間品咖時段 (10:00 - 18:00)">
+                      <option value="10:30">10:30 晨光手沖時光</option>
+                      <option value="12:00">12:00 午間輕食咖啡</option>
+                      <option value="14:30" selected>14:30 漫活韓系下午茶</option>
+                      <option value="16:00">16:00 午後閱讀慢嚐</option>
+                    </optgroup>
+                    <optgroup label="夜間微醺時段 (18:00 - 01:00)">
+                      <option value="18:30">18:30 日落第一杯特調</option>
+                      <option value="20:00">20:00 都會微醺之夜</option>
+                      <option value="21:30">21:30 深夜爵士沙發座</option>
+                      <option value="23:00">23:00 子夜靈魂微醺</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium mb-1 opacity-80">預約人數 Guests</label>
+                  <select id="book-guests" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880] transition-colors">
+                    <option value="1">1位（推薦日光吧台席）</option>
+                    <option value="2" selected>2位（原木雅座 / 雙人沙發）</option>
+                    <option value="3-4">3-4位（漫活圓桌沙發）</option>
+                    <option value="5-6">5-6位（半私密卡座包廂）</option>
+                    <option value="7+">7位以上（歡迎電話洽詢專場）</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium mb-1 opacity-80">空間偏好 Area</label>
+                  <select id="book-area" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880] transition-colors">
+                    <option value="奶油白日光吧台">奶油白日光吧台（觀賞手沖）</option>
+                    <option value="原木漫活沙發區">原木漫活沙發區（舒適交談）</option>
+                    <option value="夜幕琥珀微醺私密座">夜幕琥珀微醺私密座（低光情調）</option>
+                    <option value="現場最佳安排">現場最佳安排</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium mb-1 opacity-80">訂位姓名 Name</label>
+                  <input type="text" id="book-name" required placeholder="例如：林小姐 / Mr. Chen" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880] transition-colors">
+                </div>
+                <div>
+                  <label class="block text-xs font-medium mb-1 opacity-80">聯絡電話 Phone</label>
+                  <input type="tel" id="book-phone" required placeholder="例如：0912-345-678" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880] transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium mb-1 opacity-80">特別備註 Special Request (選填)</label>
+                <input type="text" id="book-notes" placeholder="例如：慶生約會、需安靜筆電插座、或由品味清單帶入" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880] transition-colors">
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-[#C5A880] hover:bg-[#D4B68E] text-[#1C1512] font-semibold text-xs tracking-wider uppercase transition-colors shadow-xs flex items-center justify-center gap-2">
+                <span>確認送出預訂席位</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================
+       頁尾 (Footer)
+       =============================== -->
+  <footer class="py-12 border-t border-[#EAE0D4] bg-[#F2ECE3] text-xs text-[#786659] transition-colors duration-500" id="app-footer">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <span class="font-luxury text-base font-semibold text-[#1C1512] transition-colors" id="footer-logo">不務正業 Coffee Bar</span>
+        <span class="mx-2 opacity-40">|</span>
+        <span class="tracking-widest uppercase">白天咖啡，夜晚微醺。</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <a href="#story" class="hover:text-[#C5A880] transition-colors">品牌理念</a>
+        <a href="#reviews" class="hover:text-[#C5A880] transition-colors">顧客好評</a>
+        <a href="#menu" class="hover:text-[#C5A880] transition-colors">精選菜單</a>
+        <a href="#spaces" class="hover:text-[#C5A880] transition-colors">空間美學</a>
+        <a href="#atmosphere" class="hover:text-[#C5A880] transition-colors">晝夜體驗</a>
+        <a href="#contact" class="hover:text-[#C5A880] transition-colors">門市資訊</a>
+      </div>
+      <div class="opacity-75">
+        © 2026 不務正業 Coffee Bar. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===============================
+       品味試算抽屜 (Cart / Tasting Drawer)
+       =============================== -->
+  <div id="cart-drawer" class="hidden fixed inset-0 z-50 overflow-hidden bg-black/50 backdrop-blur-sm flex justify-end">
+    <div class="w-full max-w-md h-full bg-[#FAF7F2] text-[#241A15] shadow-2xl flex flex-col transition-colors" id="cart-drawer-panel">
+      
+      <div class="p-6 border-b border-black/10 flex items-center justify-between" id="cart-drawer-header">
+        <div>
+          <h3 class="font-luxury text-xl font-medium">品味清單 · 點單試算</h3>
+          <p class="text-xs opacity-60">您挑選的美味將可一併帶至現場或作為預約參考</p>
+        </div>
+        <button onclick="toggleCartDrawer()" class="p-2 rounded-full hover:bg-black/5 transition-colors" aria-label="關閉清單">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-3">
+        <!-- 由 JavaScript 動態生成試算品項 -->
+      </div>
+
+      <div class="p-6 border-t border-black/10 space-y-4" id="cart-drawer-footer">
+        <div class="flex items-center justify-between text-base">
+          <span class="font-medium">預計試算金額：</span>
+          <span id="cart-total-price" class="font-mono text-xl font-semibold text-[#C5A880]">NT$ 0</span>
+        </div>
+        <div class="text-[11px] opacity-60">
+          * 實際消費依現場點單與服務費計，本清單可供訂位時留存備註。
+        </div>
+        <button onclick="applyCartToBooking()" class="w-full py-3.5 rounded-xl bg-[#C5A880] hover:bg-[#D4B68E] text-[#1C1512] font-semibold text-xs tracking-wider uppercase transition-colors shadow-xs">
+          帶入清單並線上預約訂位
+        </button>
+      </div>
+
     </div>
   </div>
-</section>
 
-<section id="menu">
-  <h2>COFFEE MENU</h2>
-  <p class="subtitle">精選咖啡品項</p>
-  <div class="menu-list">
-    <div class="menu-item"><span>美式咖啡 Americano</span><span>NT$ 100</span></div>
-    <div class="menu-item"><span>拿鐵咖啡 Cafe Latte</span><span>NT$ 130</span></div>
-    <div class="menu-item"><span>焦糖瑪奇朵</span><span>NT$ 150</span></div>
-    <div class="menu-item"><span>香草奶油拿鐵</span><span>NT$ 150</span></div>
+  <!-- ===============================
+       風味解析彈窗 (Item Detail Modal)
+       =============================== -->
+  <div id="item-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl bg-white border border-[#E8DFD3] text-[#241A15] transition-colors" id="item-modal-panel">
+      
+      <div class="relative aspect-[16/10] bg-[#EAE2D7] overflow-hidden">
+        <img id="item-modal-img" src="" alt="" class="w-full h-full object-cover">
+        <button onclick="closeItemModal()" class="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white hover:bg-black/75 transition-colors" aria-label="關閉風味彈窗">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="absolute top-4 left-4">
+          <span id="item-modal-badge" class="text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-[#EAD8C3] font-medium backdrop-blur-xs">全日供應</span>
+        </div>
+      </div>
+
+      <div class="p-6 md:p-8 space-y-4">
+        <div class="flex items-baseline justify-between gap-4">
+          <div>
+            <h3 id="item-modal-title" class="text-2xl font-luxury font-medium">餐點名稱</h3>
+            <p id="item-modal-en" class="text-xs text-[#A69688] mt-0.5 font-light">English Name · Korean Name</p>
+          </div>
+          <span id="item-modal-price" class="font-mono text-xl font-semibold text-[#C5A880]">NT$ 0</span>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-[#C5A880]/10 text-xs text-[#C5A880] font-medium flex items-center justify-between">
+          <span>風味輪調性：</span>
+          <span id="item-modal-flavor">明亮柑橘</span>
+        </div>
+
+        <p id="item-modal-desc" class="text-sm leading-relaxed text-[#58483D] font-light">
+          餐點詳細描述說明。
+        </p>
+
+        <div>
+          <span class="text-xs opacity-60 block mb-1.5 font-light">風味關鍵字：</span>
+          <div id="item-modal-notes" class="flex flex-wrap gap-1.5">
+            <!-- 標籤 -->
+          </div>
+        </div>
+
+        <div class="pt-4 flex items-center gap-3">
+          <button id="item-modal-add-btn" class="flex-1 py-3 rounded-xl bg-[#C5A880] text-[#1C1512] font-semibold text-xs tracking-wider uppercase hover:bg-[#D4B68E] transition-colors">
+            加入品味試算清單
+          </button>
+          <button onclick="closeItemModal()" class="px-5 py-3 rounded-xl border border-black/10 text-xs font-medium hover:bg-black/5 transition-colors">
+            關閉
+          </button>
+        </div>
+      </div>
+
+    </div>
   </div>
-</section>
 
-<section class="contact" id="contact">
-  <h2>CONTACT US</h2>
-  <p class="subtitle">聯絡我們</p>
-  <p>不務正業 Coffee Bar</p>
-  <p>營業時間：每日 10:00－20:00</p>
-  <p>歡迎來到我們的咖啡生活。</p>
-</section>
-</main>
+  <!-- ===============================
+       席位預約彈窗 (Online Reservation Modal)
+       =============================== -->
+  <div id="reservation-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl bg-white border border-[#E8DFD3] text-[#241A15] transition-colors" id="reservation-modal-panel">
+      
+      <div class="p-6 md:p-8 border-b border-black/10 flex items-center justify-between" id="reservation-modal-header">
+        <div>
+          <div class="text-xs uppercase tracking-widest text-[#C5A880] font-medium">Reservation</div>
+          <h3 class="text-2xl font-luxury font-medium">不務正業 Coffee Bar 席位預訂</h3>
+        </div>
+        <button onclick="closeReservationModal()" class="p-2 rounded-full hover:bg-black/5 transition-colors" aria-label="關閉預約視窗">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
 
-<footer>
-  © 2026 不務正業 Coffee Bar. All Rights Reserved.
-  <p>以 AI 與網頁技術打造的品牌形象網站</p>
-</footer>
+      <div class="p-6 md:p-8" id="reservation-modal-content">
+        <!-- 未送出時為表單，送出後顯示確認結果 -->
+        <form onsubmit="handleReservationSubmit(event, true)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium mb-1 opacity-80">預約日期 Date</label>
+              <input type="date" id="modal-book-date" required class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880]">
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-1 opacity-80">預約時段 Time Slot</label>
+              <select id="modal-book-time" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880]">
+                <option value="10:30">10:30 晨光手沖</option>
+                <option value="12:00">12:00 午間手沖輕食</option>
+                <option value="14:30" selected>14:30 韓系漫活下午茶</option>
+                <option value="16:00">16:00 午後咖啡</option>
+                <option value="18:30">18:30 日落第一杯特調</option>
+                <option value="20:00">20:00 都會微醺之夜</option>
+                <option value="21:30">21:30 深夜爵士沙發座</option>
+                <option value="23:00">23:00 子夜靈魂微醺</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium mb-1 opacity-80">預約人數 Guests</label>
+              <select id="modal-book-guests" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880]">
+                <option value="1">1位</option>
+                <option value="2" selected>2位</option>
+                <option value="3-4">3-4位</option>
+                <option value="5-6">5-6位</option>
+                <option value="7+">7位以上</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-1 opacity-80">空間偏好 Area</label>
+              <select id="modal-book-area" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880]">
+                <option value="奶油白日光吧台">奶油白日光吧台</option>
+                <option value="原木漫活沙發區">原木漫活沙發區</option>
+                <option value="夜幕琥珀微醺私密座">夜幕琥珀微醺私密座</option>
+                <option value="現場最佳安排">現場最佳安排</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium mb-1 opacity-80">貴賓大名 Name</label>
+              <input type="text" id="modal-book-name" required placeholder="例如：林小姐 / Mr. Chen" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880]">
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-1 opacity-80">聯絡電話 Phone</label>
+              <input type="tel" id="modal-book-phone" required placeholder="例如：0912-345-678" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880]">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium mb-1 opacity-80">特別備註 Special Request</label>
+            <input type="text" id="modal-book-notes" placeholder="特殊需求或同行品味偏好" class="w-full px-4 py-2.5 rounded-xl border border-[#E2D8CC] text-xs bg-[#FAF7F2] outline-none focus:border-[#C5A880]">
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-[#C5A880] text-[#1C1512] font-semibold text-xs tracking-wider uppercase hover:bg-[#D4B68E] transition-colors shadow-xs">
+              確認送出預約席位
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===============================
+       全站資料庫與單一 JavaScript 腳本
+       =============================== -->
+  <script>
+    // ----------------------------------------------------
+    // 1. 全品項菜單資料庫 (完整 12 項商品資料與備援圖片)
+    // ----------------------------------------------------
+    const MENU_ITEMS = [
+      {
+        id: 'c1',
+        name: '煙燻柚香氣泡冰美式',
+        enName: 'Smoked Yuzu Espresso Tonic',
+        krName: '스모크드 유자 에스프레소 토닉',
+        category: 'coffee',
+        price: 200,
+        description: '以自烘深焙衣索比亞濃縮咖啡為底，融合日韓特選完熟黃柚汁與綿密通寧氣泡，點綴炙燒迷迭香，酸甜清爽而富有層次。',
+        notes: ['黃金柚香', '迷迭香草本', '高山柑橘', '清爽細緻氣泡'],
+        flavorProfile: '酸甜微甘 · 明亮草本',
+        timeAvailability: 'all-day',
+        isPopular: true,
+        image: './src/assets/images/specialty_coffee_1792862146757.jpg',
+        fallback: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'c2',
+        name: '極萃厚乳生燕麥拿鐵',
+        enName: 'Signature Oat Dirty Latte',
+        krName: '시그니처 오트 더티 라떼',
+        category: 'coffee',
+        price: 190,
+        description: '特選慢速冷凝燕麥厚乳，直接注入雙份極短萃取（Ristretto）的堅果調咖啡，不攪拌直接啜飲，感受溫熱與冰爽的奢華碰撞。',
+        notes: ['烘烤杏仁', '黑可可', '濃郁乳香', '綿密滑順'],
+        flavorProfile: '堅果焦糖 · 醇厚柔滑',
+        timeAvailability: 'all-day',
+        isPopular: true,
+        image: './src/assets/images/specialty_coffee_1792862146757.jpg',
+        fallback: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'c3',
+        name: '衣索比亞 耶加雪菲 蜜處理 G1',
+        enName: 'Ethiopia Yirgacheffe Honey G1',
+        krName: '에티오피아 예가체프 핸드드립',
+        category: 'coffee',
+        price: 220,
+        description: '低溫慢速發酵，手沖濾煮出如佛手柑、水蜜桃與白花般的高雅香氣，餘韻如蜜茶般甘醇悠長。',
+        notes: ['水蜜桃', '茉莉白花', '荔枝蜜', '伯爵茶感'],
+        flavorProfile: '花果蜜韻 · 乾淨清透',
+        timeAvailability: 'daytime',
+        image: './src/assets/images/specialty_coffee_1792862146757.jpg',
+        fallback: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'c4',
+        name: '濟州宇治抹香生乳拿鐵',
+        enName: 'Jeju Green Forest Matcha Latte',
+        krName: '제주 말차 생크림 라떼',
+        category: 'coffee',
+        price: 210,
+        description: '嚴選頂級石臼慢磨綠茶粉，搭配小農蒸煮生乳與香草海鹽奶霜，層次如翡翠漸層，醇厚回甘。',
+        notes: ['濃郁茶韻', '生乳甘醇', '微鹹海鹽', '滑潤奶蓋'],
+        flavorProfile: '濃郁回甘 · 絲滑奶霜',
+        timeAvailability: 'all-day',
+        image: './src/assets/images/specialty_coffee_1792862146757.jpg',
+        fallback: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'd1',
+        name: '極致焦香流心巴斯克',
+        enName: 'Melting Core Basque Cheesecake',
+        krName: '멜팅 바스크 치즈케이크',
+        category: 'dessert',
+        price: 220,
+        description: '以北海道十勝奶油乳酪與馬達加斯加香草莢高溫炙烤，外層微焦泛著焦糖香氣，內餡呈現奢華半熟流心質地。',
+        notes: ['北海道乳酪', '香草籽甘甜', '微焦焦糖脆邊', '法式香緹鮮奶油'],
+        flavorProfile: '濃郁半熟 · 焦香綿密',
+        timeAvailability: 'all-day',
+        isPopular: true,
+        image: './src/assets/images/korean_dessert_1792862146720.jpg',
+        fallback: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'd2',
+        name: '楓糖肉桂酥脆可朗芙',
+        enName: 'Crispy Maple & Cinnamon Croffle',
+        krName: '크리스피 메이플 크로플',
+        category: 'dessert',
+        price: 200,
+        description: '法式發酵奶油可頌麵糰熱壓烘烤，外層喀嚓酥脆，內層蜂巢輕柔，佐以加拿大楓糖漿、錫蘭肉桂與頂級香草冰淇淋。',
+        notes: ['現點現烤', '焦糖薄脆', '肉桂暖香', '冰火雙重交融'],
+        flavorProfile: '酥脆鬆軟 · 甜蜜芳香',
+        timeAvailability: 'all-day',
+        isPopular: true,
+        image: './src/assets/images/korean_dessert_1792862146720.jpg',
+        fallback: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'd3',
+        name: '皇家伯爵茶栗子蒙布朗',
+        enName: 'Royal Earl Grey Mont Blanc',
+        krName: '로얄 얼그레이 몽블랑',
+        category: 'dessert',
+        price: 240,
+        description: '法式栗子泥揉合唐寧伯爵茶碎葉，內裹覆盆子野莓凝凍與酥脆蛋白餅，酸甜平衡，優雅迷人。',
+        notes: ['法國栗子', '佛手柑茶香', '野莓微酸', '酥脆達克瓦茲'],
+        flavorProfile: '優雅甘醇 · 層次豐富',
+        timeAvailability: 'all-day',
+        image: './src/assets/images/korean_dessert_1792862146720.jpg',
+        fallback: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'k1',
+        name: '不務正業 特調 No.1（白夜迷蹤）',
+        enName: 'Midnight Negroni Blanc',
+        krName: '미드나잇 네그로니 블랑',
+        category: 'cocktail',
+        price: 380,
+        description: '向打破日常常規的品牌精神致敬。以澄清手沖咖啡液洗白蘭地，融合義大利Suze苦艾草與白葡萄香甜酒，清澈如水晶，風味卻深刻迷人。',
+        notes: ['草本冷萃', '白葡萄露', '金萱茶香', '雪松尾韻'],
+        flavorProfile: '草本微苦 · 晶瑩甘醇 · 酒精濃度 18%',
+        timeAvailability: 'night',
+        isPopular: true,
+        image: './src/assets/images/signature_cocktail_1792862146619.jpg',
+        fallback: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'k2',
+        name: '首爾日落暮色帕洛瑪',
+        enName: 'Seoul Sunset Smoky Paloma',
+        krName: '서울 선셋 스모키 팔로마',
+        category: 'cocktail',
+        price: 360,
+        description: '龍舌蘭注入焙煎麥茶，搭配手榨粉紅葡萄柚與粉紅胡椒岩鹽圈，上桌時佐以蘋果木煙燻穹頂，夢幻如漢江日暮。',
+        notes: ['煙燻木香', '紅葡萄柚', '炭焙麥茶', '粉紅岩鹽'],
+        flavorProfile: '果香酸甜 · 煙燻回甘 · 酒精濃度 14%',
+        timeAvailability: 'night',
+        image: './src/assets/images/signature_cocktail_1792862146619.jpg',
+        fallback: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'k3',
+        name: '微醺絲絨提拉米蘇馬丁尼',
+        enName: 'Velvet Tiramisu Silk Martini',
+        krName: '벨벳 티라미수 마티니',
+        category: 'cocktail',
+        price: 400,
+        description: '將甜點化為液態酒精的極致之作。濃縮咖啡伏特加、卡魯瓦咖啡甜酒、法芙娜黑可可粉與微炙香緹馬斯卡彭。',
+        notes: ['現萃Espresso', '馬斯卡彭乳酪', '法芙娜可可', '大人感苦甜'],
+        flavorProfile: '絲滑醇郁 · 甜點調酒 · 酒精濃度 16%',
+        timeAvailability: 'night',
+        image: './src/assets/images/signature_cocktail_1792862146619.jpg',
+        fallback: 'https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'b1',
+        name: '黑松露帕瑪森現炸金黃脆薯',
+        enName: 'Truffle Parmesan Hand-Cut Fries',
+        krName: '트러플 파마산 프렌치 프라이',
+        category: 'bites',
+        price: 220,
+        description: '精選進口黃金脆薯，起鍋即裹上義大利頂級黑松露油與現刨熟成帕瑪森乾酪，搭配主廚自製蒜香酸奶醬。',
+        notes: ['熟成乾酪', '黑松露香氣', '現刨起司', '蒜香酸奶'],
+        flavorProfile: '香脆濃郁 · 佐酒必點',
+        timeAvailability: 'all-day',
+        image: './src/assets/images/korean_dessert_1792862146720.jpg',
+        fallback: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'b2',
+        name: '伊比利生火腿無花果布拉塔',
+        enName: 'Ibérico Jamón & Fig Burrata Platter',
+        krName: '이베리코 하몽 부라타 플레이트',
+        category: 'bites',
+        price: 380,
+        description: '橡木子等級風乾伊比利生火腿，搭配新鮮完熟無花果、義大利手撕布拉塔生乳酪與初榨橄欖油、陳年巴薩米克醋膏。',
+        notes: ['鹹香熟成火腿', '手作新鮮布拉塔', '蜜甜無花果', '巴薩米克醋'],
+        flavorProfile: '清甜鹹鮮 · 高級佐酒小點',
+        timeAvailability: 'all-day',
+        image: './src/assets/images/signature_cocktail_1792862146619.jpg',
+        fallback: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    // ----------------------------------------------------
+    // 2. 空間美學資料庫
+    // ----------------------------------------------------
+    const SPACES = {
+      'sunlit-bar': {
+        id: 'sunlit-bar',
+        title: '奶油白日光吧台',
+        subtitle: 'Sunlit Cream Bar & Counter',
+        description: '清晨與午後，日光從大片落地窗傾瀉而下。弧形奶油白磨石牆面搭配深色胡桃木與香檳金飾條，近距離感受咖啡師手沖水流的慢調節奏。',
+        atmosphere: '柔和日光 · 輕爵士 · 咖啡香氣漫溢',
+        capacity: '8席（附高腳軟包皮革座）',
+        ideal: '個人沈浸品咖、觀賞咖啡師手沖、質感工作',
+        image: './src/assets/images/hero_coffee_bar_1792862145845.jpg',
+        fallback: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80'
+      },
+      'velvet-lounge': {
+        id: 'velvet-lounge',
+        title: '原木漫活沙發區',
+        subtitle: 'Velvet & Oak Slow Lounge',
+        description: '韓系極簡與北歐家具的完美融合，低飽和奶油米色低調沙發，搭配手工編織地毯與溫暖圓木茶几，營造如私人藝廊般的舒適生活感。',
+        atmosphere: '靜謐放鬆 · 暖色漫射光 · 鬆弛感空間',
+        capacity: '16席（4組雙人至四人沙發桌）',
+        ideal: '閨蜜好友甜點約會、午後深度對談、慢步調下午茶',
+        image: './src/assets/images/korean_dessert_1792862146720.jpg',
+        fallback: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1600&q=80'
+      },
+      'amber-nook': {
+        id: 'amber-nook',
+        title: '夜幕琥珀微醺私密座',
+        subtitle: 'Amber Dusk Speakeasy Booth',
+        description: '傍晚六點，店內燈光緩緩降暗，琥珀色洗牆燈與黃銅檯燈點亮。轉化為都會隱密酒吧，在微醺香氣與低沈貝斯中享受遠離喧囂的自由夜晚。',
+        atmosphere: '微醺沉浸 · 琥珀燭光 · 都會低語',
+        capacity: '12席（含半隱蔽卡座包廂）',
+        ideal: '下班微醺、夜間情侶約會、靈魂放鬆私聚',
+        image: './src/assets/images/signature_cocktail_1792862146619.jpg',
+        fallback: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1600&q=80'
+      }
+    };
+
+    // ----------------------------------------------------
+    // 3. 顧客真實好評資料庫 (完整 6 則真實顧客好評)
+    // ----------------------------------------------------
+    const CUSTOMER_REVIEWS = [
+      {
+        id: 'r1',
+        name: '林若涵 Evelyn',
+        role: '自由文字工作者 · 常客',
+        initials: 'EL',
+        rating: 5,
+        timeVisited: '平日午後 · 奶油日光吧台',
+        favoriteItem: '極萃厚乳生燕麥拿鐵 & 流心巴斯克',
+        date: '2026.10',
+        comment: '首爾漢南洞的既視感！大片日光灑在奶油白牆面上的光影美得讓人屏息。厚乳拿鐵的堅果香氣非常深沉，搭配外焦內潤的流心巴斯克，在這邊寫作不知不覺度過了三個小時，太喜歡這份都會中的留白了。'
+      },
+      {
+        id: 'r2',
+        name: '張詠晴 Claire',
+        role: '室內空間美學設計師',
+        initials: 'CC',
+        rating: 5,
+        timeVisited: '週五 18:30 · 琥珀微醺卡座',
+        favoriteItem: '白夜迷蹤 No.1 & 黑松露脆薯',
+        date: '2026.10',
+        comment: '傍晚六點燈光從柔和日光調暗至琥珀燭光的那一刻真的太迷人！澄清咖啡調酒「白夜迷蹤」層次極度乾淨，雪松與果酸的尾韻非常高級。胡桃木與金屬飾條的比例恰到好處，是台北少見真正有靈魂的白天夜晚雙重空間。'
+      },
+      {
+        id: 'r3',
+        name: '韓東赫 David',
+        role: '外商亞太區行銷總監',
+        initials: 'DH',
+        rating: 5,
+        timeVisited: '週末午後 · 原木漫活沙發區',
+        favoriteItem: '衣索比亞 耶加雪菲蜜處理 & 酥脆可朗芙',
+        date: '2026.09',
+        comment: '身為挑剔的手沖愛好者，這裡的耶加雪菲花果蜜感表現無可挑剔。可朗芙外層薄脆、香草冰淇淋品質極好。沙發坐感極佳，即使客人滿座也不顯喧噪，服務人員對於豆況的解說專業而親切。'
+      },
+      {
+        id: 'r4',
+        name: '陳昱廷 Leo',
+        role: '獨立品牌主理人',
+        initials: 'LC',
+        rating: 5,
+        timeVisited: '深夜 21:30 · 爵士微醺吧台',
+        favoriteItem: '首爾暮色帕洛瑪 & 伊比利生火腿',
+        date: '2026.10',
+        comment: '原本只是想下班後找個安靜的地方喝杯調酒，沒想到徹底被圈粉。煙燻葡萄柚與岩鹽的搭配洗去了整週的疲憊，低沈的爵士樂選曲極有品味。「不務正業」這個名字取得太浪漫，這裡就是現代人的解憂庇護所。'
+      },
+      {
+        id: 'r5',
+        name: '簡子萱 Ariel',
+        role: '美食生活專欄作家',
+        initials: 'SC',
+        rating: 5,
+        timeVisited: '週日 14:00 · 奶油白日光吧台',
+        favoriteItem: '煙燻柚香氣泡冰美式',
+        date: '2026.10',
+        comment: '這杯煙燻柚香美式是我在台北喝過平衡度最棒的 Espresso Tonic！柚香飽滿而不搶戲，迷迭香微炙的香氣跟濃縮油脂交融得無比美妙。店內連餐具陶盤都手感溫潤，完全是極致品味的展現。'
+      },
+      {
+        id: 'r6',
+        name: '許哲銘 Marcus',
+        role: '獨立音樂製作人',
+        initials: 'MC',
+        rating: 5,
+        timeVisited: '深夜 22:30 · 琥珀微醺私密座',
+        favoriteItem: '微醺絲絨提拉米蘇馬丁尼',
+        date: '2026.09',
+        comment: '把現萃 Espresso 融入甜點調酒，微苦微甜、絲絨般的口感讓人驚艷！店裡音響的聲學表現很驚人，高音清澈低音扎實。從咖啡香到酒香的過渡天衣無縫，已經預約了下週末再訪。'
+      }
+    ];
+
+    // ----------------------------------------------------
+    // 4. 全局狀態管理 (State)
+    // ----------------------------------------------------
+    let isNightMode = false;
+    let selectedCategory = 'all';
+    let searchQuery = '';
+    let reviewCount = 4;
+    let currentSpaceKey = 'sunlit-bar';
+    let cart = []; // [{ item, quantity }]
+
+    // ----------------------------------------------------
+    // 5. 初始生命週期 (DOMContentLoaded)
+    // ----------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      // 設置預約日期為今日
+      const today = new Date().toISOString().split('T')[0];
+      const dateInput = document.getElementById('book-date');
+      const modalDateInput = document.getElementById('modal-book-date');
+      if (dateInput) dateInput.value = today;
+      if (modalDateInput) modalDateInput.value = today;
+
+      // 渲染菜單、好評
+      renderMenuItems();
+      renderCustomerReviews();
+    });
+
+    // ----------------------------------------------------
+    // 6. 菜單渲染與即時搜尋過濾
+    // ----------------------------------------------------
+    function renderMenuItems() {
+      const grid = document.getElementById('menu-grid');
+      if (!grid) return;
+
+      const filtered = MENU_ITEMS.filter(item => {
+        const matchCategory = selectedCategory === 'all' || item.category === selectedCategory;
+        const q = searchQuery.toLowerCase().trim();
+        const matchSearch = q === '' ||
+          item.name.toLowerCase().includes(q) ||
+          item.enName.toLowerCase().includes(q) ||
+          item.krName.toLowerCase().includes(q) ||
+          item.description.toLowerCase().includes(q) ||
+          item.notes.some(n => n.toLowerCase().includes(q)) ||
+          (item.flavorProfile && item.flavorProfile.toLowerCase().includes(q));
+        return matchCategory && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-16 opacity-60">
+            <svg class="w-10 h-10 mx-auto mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            <p class="text-sm">未找到符合「${searchQuery}」的餐點，歡迎嘗試其他關鍵字。</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const timeLabel = item.timeAvailability === 'night' 
+          ? '18:00起 夜間限定' 
+          : item.timeAvailability === 'daytime' 
+            ? '日間手沖限定' 
+            : '全日供應';
+
+        return `
+          <div class="group rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between ${
+            isNightMode 
+              ? 'bg-[#1C1512] border-[#2E221B] hover:border-[#C5A880]/50' 
+              : 'bg-white border-[#EDE5DA] hover:border-[#C5A880]/50 shadow-xs'
+          }">
+            <div>
+              <!-- 圖片與標籤 -->
+              <div class="relative aspect-[4/3] bg-[#EAE2D7] overflow-hidden cursor-pointer" onclick="openItemModal('${item.id}')">
+                <img 
+                  src="${item.image}" 
+                  onerror="this.onerror=null; this.src='${item.fallback}';"
+                  alt="${item.name}" 
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                >
+                <div class="absolute top-3 left-3">
+                  <span class="text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-[#EAD8C3] font-medium backdrop-blur-xs">
+                    ${timeLabel}
+                  </span>
+                </div>
+                ${item.isPopular ? `
+                  <div class="absolute top-3 right-3">
+                    <span class="text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#C5A880] text-[#1C1512] font-semibold">
+                      人氣推薦
+                    </span>
+                  </div>
+                ` : ''}
+              </div>
+
+              <!-- 內容說明 -->
+              <div class="p-6">
+                <div class="flex items-baseline justify-between gap-2 mb-1">
+                  <h3 onclick="openItemModal('${item.id}')" class="text-lg font-luxury font-medium tracking-wide hover:text-[#C5A880] cursor-pointer transition-colors">
+                    ${item.name}
+                  </h3>
+                  <span class="font-mono text-base font-semibold text-[#C5A880]">
+                    NT$ ${item.price}
+                  </span>
+                </div>
+
+                <div class="text-[11px] text-[#A69688] mb-3 flex items-center gap-1.5 font-light">
+                  <span>${item.enName}</span>
+                  <span>·</span>
+                  <span class="opacity-75">${item.krName}</span>
+                </div>
+
+                <p class="text-xs line-clamp-2 leading-relaxed mb-4 ${isNightMode ? 'text-[#AFA498]' : 'text-[#675446]'} font-light">
+                  ${item.description}
+                </p>
+
+                <!-- 風味標籤筆記 -->
+                <div class="flex flex-wrap items-center gap-1.5 text-[11px] text-[#C5A880] mb-2 font-light">
+                  ${item.notes.map((note, idx) => `
+                    <span>${note}</span>${idx < item.notes.length - 1 ? '<span class="opacity-40">·</span>' : ''}
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片底部按鈕 -->
+            <div class="px-6 pb-6 pt-3 border-t border-black/5 flex items-center justify-between">
+              <button onclick="openItemModal('${item.id}')" class="text-xs opacity-75 hover:opacity-100 flex items-center gap-1 transition-opacity">
+                <span>風味解析</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+
+              <button onclick="addToCart('${item.id}')" class="px-3.5 py-1.5 text-xs font-medium rounded-full bg-[#C5A880]/15 text-[#C5A880] hover:bg-[#C5A880] hover:text-[#1C1512] transition-colors flex items-center gap-1.5 shadow-2xs">
+                <span>+ 加入品味單</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setMenuCategory(cat) {
+      selectedCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = 'cat-pill px-4 py-2 text-xs font-semibold rounded-full bg-[#C5A880] text-[#1C1512] shadow-xs';
+        } else {
+          btn.className = isNightMode 
+            ? 'cat-pill px-4 py-2 text-xs font-medium rounded-full bg-[#221813] text-[#B8ACA0] hover:text-white'
+            : 'cat-pill px-4 py-2 text-xs font-medium rounded-full bg-[#F2ECE3] text-[#5C4A3E] hover:text-[#241A15]';
+        }
+      });
+      renderMenuItems();
+    }
+
+    function handleSearchMenu(query) {
+      searchQuery = query;
+      renderMenuItems();
+    }
+
+    // ----------------------------------------------------
+    // 7. 風味解析彈窗控制 (Item Modal)
+    // ----------------------------------------------------
+    function openItemModal(id) {
+      const item = MENU_ITEMS.find(i => i.id === id);
+      if (!item) return;
+
+      const modal = document.getElementById('item-modal');
+      const modalPanel = document.getElementById('item-modal-panel');
+      const img = document.getElementById('item-modal-img');
+      const badge = document.getElementById('item-modal-badge');
+      const title = document.getElementById('item-modal-title');
+      const en = document.getElementById('item-modal-en');
+      const price = document.getElementById('item-modal-price');
+      const flavor = document.getElementById('item-modal-flavor');
+      const desc = document.getElementById('item-modal-desc');
+      const notesContainer = document.getElementById('item-modal-notes');
+      const addBtn = document.getElementById('item-modal-add-btn');
+
+      img.src = item.image;
+      img.onerror = () => { img.src = item.fallback; };
+      badge.textContent = item.timeAvailability === 'night' ? '18:00起 夜間限定' : (item.timeAvailability === 'daytime' ? '日間手沖限定' : '全日供應');
+      title.textContent = item.name;
+      en.textContent = `${item.enName} · ${item.krName}`;
+      price.textContent = `NT$ ${item.price}`;
+      flavor.textContent = item.flavorProfile || '原創調配';
+      desc.textContent = item.description;
+
+      notesContainer.innerHTML = item.notes.map(note => `
+        <span class="px-2.5 py-1 text-xs rounded-md ${isNightMode ? 'bg-white/10 text-[#EAE2D7]' : 'bg-black/5 text-[#5D4638]'}">
+          ${note}
+        </span>
+      `).join('');
+
+      addBtn.onclick = () => {
+        addToCart(item.id);
+        closeItemModal();
+      };
+
+      if (isNightMode) {
+        modalPanel.className = 'w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl bg-[#1C1512] border border-[#2E221B] text-[#EDE4D9]';
+      } else {
+        modalPanel.className = 'w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl bg-white border border-[#E8DFD3] text-[#241A15]';
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeItemModal() {
+      const modal = document.getElementById('item-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // ----------------------------------------------------
+    // 8. 顧客好評隨機抽樣與切換 (Reviews)
+    // ----------------------------------------------------
+    function setReviewCount(count) {
+      reviewCount = count;
+      const btn3 = document.getElementById('btn-count-3');
+      const btn4 = document.getElementById('btn-count-4');
+      const container = document.getElementById('reviews-container');
+
+      if (count === 3) {
+        btn3.className = 'px-3 py-1 rounded-full font-semibold bg-[#C5A880] text-[#1C1512] transition-all';
+        btn4.className = isNightMode ? 'px-3 py-1 rounded-full font-medium text-[#A69688] transition-all' : 'px-3 py-1 rounded-full font-medium text-[#6D5A4E] transition-all';
+        container.className = 'grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300';
+      } else {
+        btn4.className = 'px-3 py-1 rounded-full font-semibold bg-[#C5A880] text-[#1C1512] transition-all';
+        btn3.className = isNightMode ? 'px-3 py-1 rounded-full font-medium text-[#A69688] transition-all' : 'px-3 py-1 rounded-full font-medium text-[#6D5A4E] transition-all';
+        container.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-opacity duration-300';
+      }
+
+      renderCustomerReviews();
+    }
+
+    function shuffleReviews() {
+      const icon = document.getElementById('shuffle-icon');
+      const container = document.getElementById('reviews-container');
+      if (icon) icon.classList.add('rotate-180');
+      if (container) container.classList.add('opacity-30');
+
+      setTimeout(() => {
+        renderCustomerReviews();
+        if (icon) icon.classList.remove('rotate-180');
+        if (container) container.classList.remove('opacity-30');
+      }, 250);
+    }
+
+    function renderCustomerReviews() {
+      const container = document.getElementById('reviews-container');
+      if (!container) return;
+
+      const shuffled = [...CUSTOMER_REVIEWS].sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, reviewCount);
+
+      container.innerHTML = selected.map(rev => `
+        <div class="group rounded-2xl p-6 border flex flex-col justify-between transition-all duration-300 ${
+          isNightMode 
+            ? 'bg-[#1C1512] border-[#2E221B] hover:border-[#C5A880]/50' 
+            : 'bg-white border-[#EDE5DA] hover:border-[#C5A880]/50 shadow-xs'
+        }">
+          <div>
+            <div class="flex items-center justify-between gap-3 mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-[#C5A880]/40 bg-[#C5A880]/10 flex items-center justify-center font-mono font-medium text-xs text-[#C5A880] shrink-0">
+                  ${rev.initials}
+                </div>
+                <div>
+                  <h3 class="font-luxury font-medium text-base tracking-wide leading-tight">${rev.name}</h3>
+                  <p class="text-[11px] text-[#A69688] font-light mt-0.5">${rev.role}</p>
+                </div>
+              </div>
+              <span class="font-mono text-xs opacity-50">${rev.date}</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 mb-3.5">
+              <span class="text-[#C5A880] text-xs">★★★★★</span>
+              <span class="font-mono text-xs font-semibold text-[#C5A880]">5.0</span>
+              <span class="text-[10px] text-[#A69688] font-light">· 極致滿意</span>
+            </div>
+
+            <div class="relative mb-6">
+              <p class="text-xs sm:text-sm font-light leading-relaxed ${isNightMode ? 'text-[#CCC1B6]' : 'text-[#58483D]'}">
+                “${rev.comment}”
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-black/5 space-y-1 text-[11px] font-light">
+            <div class="flex items-center gap-1.5 text-[#C5A880]">
+              <span class="opacity-70">造訪時段</span>
+              <span>·</span>
+              <span class="font-medium">${rev.timeVisited}</span>
+            </div>
+            <div class="flex items-center gap-1.5 opacity-75 truncate">
+              <span class="opacity-70 shrink-0">推薦品味</span>
+              <span>·</span>
+              <span class="truncate">${rev.favoriteItem}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ----------------------------------------------------
+    // 9. 空間美學展示切換 (Space Showcase)
+    // ----------------------------------------------------
+    function switchSpace(key) {
+      currentSpaceKey = key;
+      const space = SPACES[key];
+      if (!space) return;
+
+      document.getElementById('space-title').textContent = space.title;
+      document.getElementById('space-subtitle').textContent = space.subtitle;
+      document.getElementById('space-description').textContent = space.description;
+      document.getElementById('space-atmosphere').textContent = space.atmosphere;
+      document.getElementById('space-capacity').textContent = space.capacity;
+      document.getElementById('space-ideal').textContent = space.ideal;
+
+      const img = document.getElementById('space-image');
+      img.src = space.image;
+      img.onerror = () => { img.src = space.fallback; };
+
+      ['sunlit-bar', 'velvet-lounge', 'amber-nook'].forEach(k => {
+        const btn = document.getElementById('space-btn-' + k);
+        if (!btn) return;
+        if (k === key) {
+          btn.className = 'px-5 py-2.5 rounded-full text-xs font-semibold bg-[#C5A880] text-[#1C1512] shadow-sm';
+        } else {
+          btn.className = isNightMode 
+            ? 'px-5 py-2.5 rounded-full text-xs font-medium bg-[#251A15] text-[#C2B5A8] hover:text-white'
+            : 'px-5 py-2.5 rounded-full text-xs font-medium bg-white text-[#5E4C40] hover:text-[#241A15]';
+        }
+      });
+    }
+
+    function bookThisSpace() {
+      const space = SPACES[currentSpaceKey];
+      const areaSelect = document.getElementById('book-area');
+      const modalAreaSelect = document.getElementById('modal-book-area');
+
+      if (areaSelect && space) areaSelect.value = space.title;
+      if (modalAreaSelect && space) modalAreaSelect.value = space.title;
+
+      // 平滑滾動至預約區塊或開啟預約彈窗
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        openReservationModal();
+      }
+    }
+
+    // ----------------------------------------------------
+    // 10. 品味清單 / 點單試算抽屜 (Cart)
+    // ----------------------------------------------------
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      if (!drawer) return;
+      drawer.classList.toggle('hidden');
+      renderCartItems();
+    }
+
+    function addToCart(id) {
+      const item = MENU_ITEMS.find(i => i.id === id);
+      if (!item) return;
+
+      const existing = cart.find(c => c.item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ item, quantity: 1 });
+      }
+
+      updateCartBadge();
+      toggleCartDrawer();
+    }
+
+    function updateCartQuantity(id, delta) {
+      const target = cart.find(c => c.item.id === id);
+      if (!target) return;
+      target.quantity += delta;
+      cart = cart.filter(c => c.quantity > 0);
+      updateCartBadge();
+      renderCartItems();
+    }
+
+    function updateCartBadge() {
+      const badge = document.getElementById('cart-badge');
+      const totalCount = cart.reduce((acc, c) => acc + c.quantity, 0);
+      if (badge) {
+        if (totalCount > 0) {
+          badge.textContent = totalCount;
+          badge.classList.remove('hidden');
+        } else {
+          badge.classList.add('hidden');
+        }
+      }
+    }
+
+    function renderCartItems() {
+      const container = document.getElementById('cart-items-container');
+      const totalEl = document.getElementById('cart-total-price');
+      if (!container || !totalEl) return;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-20 opacity-50 space-y-2">
+            <svg class="w-10 h-10 mx-auto opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <p class="text-sm">品味清單目前是空的</p>
+            <p class="text-xs">請點選菜單中的「+ 加入品味單」預先試算</p>
+          </div>
+        `;
+        totalEl.textContent = 'NT$ 0';
+        return;
+      }
+
+      let total = 0;
+      container.innerHTML = cart.map(({ item, quantity }) => {
+        total += item.price * quantity;
+        return `
+          <div class="flex items-center justify-between p-3.5 rounded-xl border border-black/5 ${isNightMode ? 'bg-[#221813]' : 'bg-white'} shadow-2xs">
+            <div class="flex-1 pr-3">
+              <div class="text-sm font-medium leading-tight">${item.name}</div>
+              <div class="text-xs text-[#C5A880] font-mono mt-0.5">NT$ ${item.price}</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 rounded-full border border-black/20 flex items-center justify-center text-xs hover:border-[#C5A880] transition-colors" aria-label="減少數量">-</button>
+              <span class="font-mono text-xs w-4 text-center font-medium">${quantity}</span>
+              <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 rounded-full border border-black/20 flex items-center justify-center text-xs hover:border-[#C5A880] transition-colors" aria-label="增加數量">+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      totalEl.textContent = `NT$ ${total}`;
+    }
+
+    function applyCartToBooking() {
+      toggleCartDrawer();
+      if (cart.length > 0) {
+        const itemSummary = cart.map(c => `${c.item.name} x${c.quantity}`).join(', ');
+        const notesInput = document.getElementById('book-notes');
+        const modalNotesInput = document.getElementById('modal-book-notes');
+
+        if (notesInput) {
+          notesInput.value = (notesInput.value ? notesInput.value + '；預選餐點：' : '預選餐點：') + itemSummary;
+        }
+        if (modalNotesInput) {
+          modalNotesInput.value = (modalNotesInput.value ? modalNotesInput.value + '；預選餐點：' : '預選餐點：') + itemSummary;
+        }
+      }
+
+      // 平滑滾動到預約區塊
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // ----------------------------------------------------
+    // 11. 席位線上預約提交處理 (Reservation)
+    // ----------------------------------------------------
+    function openReservationModal() {
+      const modal = document.getElementById('reservation-modal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeReservationModal() {
+      const modal = document.getElementById('reservation-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function handleReservationSubmit(event, isFromModal = false) {
+      event.preventDefault();
+
+      const prefix = isFromModal ? 'modal-book-' : 'book-';
+      const name = document.getElementById(prefix + 'name')?.value || '';
+      const phone = document.getElementById(prefix + 'phone')?.value || '';
+      const date = document.getElementById(prefix + 'date')?.value || '';
+      const time = document.getElementById(prefix + 'time')?.value || '';
+      const guests = document.getElementById(prefix + 'guests')?.value || '';
+      const area = document.getElementById(prefix + 'area')?.value || '';
+      const notes = document.getElementById(prefix + 'notes')?.value || '';
+
+      const bookingCode = 'BW-' + Math.floor(100000 + Math.random() * 900000);
+
+      const summaryHtml = `
+        <div class="text-center py-4 space-y-4">
+          <div class="w-16 h-16 bg-[#C5A880]/20 text-[#C5A880] rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+            ✓
+          </div>
+          <div>
+            <h4 class="text-2xl font-luxury font-medium">席位預訂已成功確認！</h4>
+            <p class="text-xs opacity-75 mt-1">我們已為您保留專屬席位，期待與您在咖啡香與微醺中相遇。</p>
+          </div>
+
+          <div class="p-5 rounded-2xl border text-left text-xs space-y-2.5 ${isNightMode ? 'bg-[#221813] border-[#362720]' : 'bg-[#FAF7F2] border-[#E5DDD2]'}">
+            <div class="flex justify-between">
+              <span class="opacity-60">預約編號：</span>
+              <span class="font-mono font-bold text-[#C5A880]">${bookingCode}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="opacity-60">貴賓姓名：</span>
+              <span class="font-medium">${name} (${guests}位)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="opacity-60">預約時段：</span>
+              <span class="font-medium">${date} · ${time}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="opacity-60">保留空間：</span>
+              <span class="font-medium">${area}</span>
+            </div>
+            ${notes ? `
+              <div class="flex justify-between border-t border-black/5 pt-2">
+                <span class="opacity-60">特別備註：</span>
+                <span class="font-medium">${notes}</span>
+              </div>
+            ` : ''}
+          </div>
+
+          <button onclick="closeReservationModal(); resetReservationForm();" class="w-full py-3.5 rounded-xl bg-[#C5A880] text-[#1C1512] font-semibold text-xs tracking-wider uppercase hover:bg-[#D4B68E] transition-colors shadow-xs">
+            完成並關閉
+          </button>
+        </div>
+      `;
+
+      if (isFromModal) {
+        const contentBox = document.getElementById('reservation-modal-content');
+        if (contentBox) contentBox.innerHTML = summaryHtml;
+      } else {
+        openReservationModal();
+        const contentBox = document.getElementById('reservation-modal-content');
+        if (contentBox) contentBox.innerHTML = summaryHtml;
+      }
+    }
+
+    function resetReservationForm() {
+      // 延遲重設預約表單結構
+      setTimeout(() => {
+        location.reload();
+      }, 300);
+    }
+
+    // ----------------------------------------------------
+    // 12. 晝夜氛圍切換 (Day / Night Atmospheric Switcher)
+    // ----------------------------------------------------
+    function toggleDayNight() {
+      isNightMode = !isNightMode;
+
+      const body = document.getElementById('app-body');
+      const navbar = document.getElementById('navbar');
+      const moodBtn = document.getElementById('mood-btn');
+      const moodIcon = document.getElementById('mood-icon');
+      const moodText = document.getElementById('mood-text');
+      const cartBtn = document.getElementById('cart-btn');
+      const heroDesc = document.getElementById('hero-desc');
+      const heroBadges = document.getElementById('hero-badges');
+      const heroBtnMenu = document.getElementById('hero-btn-menu');
+      const storySec = document.getElementById('story');
+      const storyContent = document.getElementById('story-content');
+      const reviewsDesc = document.getElementById('reviews-desc');
+      const reviewScoreBadge = document.getElementById('review-score-badge');
+      const reviewCountWrapper = document.getElementById('review-count-wrapper');
+      const btnShuffleReviews = document.getElementById('btn-shuffle-reviews');
+      const menuDesc = document.getElementById('menu-desc');
+      const menuSearchInput = document.getElementById('menu-search-input');
+      const spacesSec = document.getElementById('spaces');
+      const spaceSubDesc = document.getElementById('space-sub-desc');
+      const spaceCardInfo = document.getElementById('space-card-info');
+      const atmoSub = document.getElementById('atmo-sub');
+      const atmoDayCard = document.getElementById('atmo-day-card');
+      const atmoNightCard = document.getElementById('atmo-night-card');
+      const contactSec = document.getElementById('contact');
+      const contactSub = document.getElementById('contact-sub');
+      const bookingCard = document.getElementById('booking-card');
+      const appFooter = document.getElementById('app-footer');
+      const footerLogo = document.getElementById('footer-logo');
+      const cartDrawerPanel = document.getElementById('cart-drawer-panel');
+
+      if (isNightMode) {
+        // 微醺模式
+        body.classList.remove('bg-[#FAF7F2]', 'text-[#241A15]');
+        body.classList.add('bg-[#140F0D]', 'text-[#EFE8DF]');
+
+        navbar.classList.remove('bg-[#FAF7F2]/90', 'border-[#E8DFD5]');
+        navbar.classList.add('bg-[#140F0D]/90', 'border-[#2D221D]');
+
+        moodBtn.className = 'px-3.5 py-2 rounded-full border border-[#C5A880]/40 bg-[#251A15] text-[#E7D6C1] text-xs font-medium flex items-center gap-1.5 shadow-xs hover:border-[#C5A880] transition-all';
+        moodIcon.innerHTML = `<svg class="w-4 h-4 text-[#C5A880]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>`;
+        moodText.textContent = '微醺模式';
+
+        cartBtn.className = 'relative p-2.5 rounded-full border border-[#382B24] bg-[#221813] text-[#EDE4D9] hover:border-[#C5A880] transition-colors shadow-xs';
+
+        heroDesc.classList.remove('text-[#5B483D]');
+        heroDesc.classList.add('text-[#C9BFB5]');
+
+        heroBadges.classList.remove('border-[#EAE1D7]', 'text-[#7A6A5E]');
+        heroBadges.classList.add('border-[#2D211B]', 'text-[#9E9085]');
+
+        heroBtnMenu.className = 'px-8 py-3.5 rounded-full bg-[#FAF7F2] text-[#1C1512] text-sm font-medium tracking-wider hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm';
+
+        storySec.className = 'py-20 md:py-28 border-t border-[#291F19] bg-[#18110E] transition-colors duration-500';
+        storyContent.classList.remove('text-[#4A3B31]');
+        storyContent.classList.add('text-[#D0C5B9]');
+
+        reviewsDesc.classList.remove('text-[#6D5A4E]');
+        reviewsDesc.classList.add('text-[#B8ACA0]');
+
+        reviewScoreBadge.className = 'px-4 py-2 rounded-full border border-[#2E221B] bg-[#1C1512] text-xs flex items-center gap-2.5 shadow-xs text-[#E8DFD5] transition-colors';
+        reviewCountWrapper.className = 'p-1 rounded-full border border-[#2E221B] bg-[#1C1512] flex items-center text-xs transition-colors';
+        btnShuffleReviews.className = 'px-3.5 py-2 rounded-full border border-[#2E221B] bg-[#1C1512] text-xs font-medium text-[#C5A880] hover:border-[#C5A880] transition-colors flex items-center gap-1.5 shadow-xs';
+
+        menuDesc.classList.remove('text-[#6D5A4E]');
+        menuDesc.classList.add('text-[#B8ACA0]');
+
+        menuSearchInput.className = 'w-full pl-10 pr-4 py-2.5 text-xs rounded-full border border-[#382921] bg-[#1C1512] text-white outline-none focus:border-[#C5A880] shadow-xs transition-colors';
+
+        spacesSec.className = 'py-20 md:py-28 border-t border-[#291F19] bg-[#18110E] transition-colors duration-500';
+        spaceSubDesc.classList.remove('text-[#6D5A4E]');
+        spaceSubDesc.classList.add('text-[#B8ACA0]');
+        spaceCardInfo.className = 'p-5 rounded-2xl border border-[#362720] bg-[#221713] space-y-3 text-xs transition-colors';
+
+        atmoSub.classList.remove('text-[#6D5A4E]');
+        atmoSub.classList.add('text-[#B8ACA0]');
+        atmoDayCard.className = 'p-8 md:p-10 rounded-3xl bg-[#1C1512]/60 border border-[#2D221B] shadow-xs transition-colors';
+        atmoNightCard.className = 'p-8 md:p-10 rounded-3xl bg-[#221713] border border-[#C5A880]/30 shadow-lg transition-colors';
+
+        contactSec.className = 'py-20 md:py-28 border-t border-[#291F19] bg-[#18110E] transition-colors duration-500';
+        contactSub.classList.remove('text-[#6D5A4E]');
+        contactSub.classList.add('text-[#B8ACA0]');
+        bookingCard.className = 'p-8 md:p-10 rounded-3xl bg-[#1C1512] border border-[#2E221B] shadow-md transition-colors';
+
+        appFooter.className = 'py-12 border-t border-[#291F19] bg-[#100B09] text-xs text-[#8C7D73] transition-colors duration-500';
+        footerLogo.className = 'font-luxury text-base font-semibold text-[#EDE4D9] transition-colors';
+
+        cartDrawerPanel.className = 'w-full max-w-md h-full bg-[#18110E] text-[#EDE4D9] shadow-2xl flex flex-col transition-colors';
+      } else {
+        // 日光模式
+        body.classList.add('bg-[#FAF7F2]', 'text-[#241A15]');
+        body.classList.remove('bg-[#140F0D]', 'text-[#EFE8DF]');
+
+        navbar.classList.add('bg-[#FAF7F2]/90', 'border-[#E8DFD5]');
+        navbar.classList.remove('bg-[#140F0D]/90', 'border-[#2D221D]');
+
+        moodBtn.className = 'px-3.5 py-2 rounded-full border border-[#DEC8AF] bg-white text-[#5D4638] text-xs font-medium flex items-center gap-1.5 shadow-xs hover:border-[#C5A880] transition-all';
+        moodIcon.innerHTML = `<svg class="w-4 h-4 text-[#C5A880]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>`;
+        moodText.textContent = '日光模式';
+
+        cartBtn.className = 'relative p-2.5 rounded-full border border-[#E5DDD2] bg-white text-[#241A15] hover:border-[#C5A880] transition-colors shadow-xs';
+
+        heroDesc.classList.add('text-[#5B483D]');
+        heroDesc.classList.remove('text-[#C9BFB5]');
+
+        heroBadges.classList.add('border-[#EAE1D7]', 'text-[#7A6A5E]');
+        heroBadges.classList.remove('border-[#2D211B]', 'text-[#9E9085]');
+
+        heroBtnMenu.className = 'px-8 py-3.5 rounded-full bg-[#1C1512] text-[#FAF7F2] text-sm font-medium tracking-wider hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm';
+
+        storySec.className = 'py-20 md:py-28 border-t border-[#ECE2D6] bg-[#F5EFEB] transition-colors duration-500';
+        storyContent.classList.add('text-[#4A3B31]');
+        storyContent.classList.remove('text-[#D0C5B9]');
+
+        reviewsDesc.classList.add('text-[#6D5A4E]');
+        reviewsDesc.classList.remove('text-[#B8ACA0]');
+
+        reviewScoreBadge.className = 'px-4 py-2 rounded-full border border-[#E5DDD2] bg-white text-xs flex items-center gap-2.5 shadow-xs transition-colors';
+        reviewCountWrapper.className = 'p-1 rounded-full border border-[#E5DDD2] bg-white flex items-center text-xs transition-colors';
+        btnShuffleReviews.className = 'px-3.5 py-2 rounded-full border border-[#E5DDD2] bg-white text-xs font-medium text-[#C5A880] hover:border-[#C5A880] transition-colors flex items-center gap-1.5 shadow-xs';
+
+        menuDesc.classList.add('text-[#6D5A4E]');
+        menuDesc.classList.remove('text-[#B8ACA0]');
+
+        menuSearchInput.className = 'w-full pl-10 pr-4 py-2.5 text-xs rounded-full border border-[#E0D5C7] bg-white outline-none focus:border-[#C5A880] shadow-xs transition-colors';
+
+        spacesSec.className = 'py-20 md:py-28 border-t border-[#ECE2D6] bg-[#F5EFEB] transition-colors duration-500';
+        spaceSubDesc.classList.add('text-[#6D5A4E]');
+        spaceSubDesc.classList.remove('text-[#B8ACA0]');
+        spaceCardInfo.className = 'p-5 rounded-2xl border border-[#E6DDD1] bg-white space-y-3 text-xs transition-colors';
+
+        atmoSub.classList.add('text-[#6D5A4E]');
+        atmoSub.classList.remove('text-[#B8ACA0]');
+        atmoDayCard.className = 'p-8 md:p-10 rounded-3xl bg-white border border-[#E7DDD0] shadow-xs transition-colors';
+        atmoNightCard.className = 'p-8 md:p-10 rounded-3xl bg-[#F2EAE0] border border-[#DFCFC0] shadow-xs transition-colors';
+
+        contactSec.className = 'py-20 md:py-28 border-t border-[#ECE2D6] bg-[#F5EFEB] transition-colors duration-500';
+        contactSub.classList.add('text-[#6D5A4E]');
+        contactSub.classList.remove('text-[#B8ACA0]');
+        bookingCard.className = 'p-8 md:p-10 rounded-3xl bg-white border border-[#E8DFD3] shadow-md transition-colors';
+
+        appFooter.className = 'py-12 border-t border-[#EAE0D4] bg-[#F2ECE3] text-xs text-[#786659] transition-colors duration-500';
+        footerLogo.className = 'font-luxury text-base font-semibold text-[#1C1512] transition-colors';
+
+        cartDrawerPanel.className = 'w-full max-w-md h-full bg-[#FAF7F2] text-[#241A15] shadow-2xl flex flex-col transition-colors';
+      }
+
+      // 重新渲染菜單品項與卡片樣式
+      renderMenuItems();
+      renderCustomerReviews();
+      switchSpace(currentSpaceKey);
+    }
+
+    // ----------------------------------------------------
+    // 13. 手機版選單切換
+    // ----------------------------------------------------
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+      }
+    }
+  </script>
 </body>
 </html>
