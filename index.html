@@ -1701,12 +1701,13 @@
       if (modal) modal.classList.add('hidden');
     }
 
-    function handleReservationSubmit(event, isFromModal = false) {
+    async function handleReservationSubmit(event, isFromModal = false) {
       event.preventDefault();
 
       const prefix = isFromModal ? 'modal-book-' : 'book-';
       const name = document.getElementById(prefix + 'name')?.value || '';
       const phone = document.getElementById(prefix + 'phone')?.value || '';
+      const email = document.getElementById(prefix + 'email')?.value || '';
       const date = document.getElementById(prefix + 'date')?.value || '';
       const time = document.getElementById(prefix + 'time')?.value || '';
       const guests = document.getElementById(prefix + 'guests')?.value || '';
@@ -1756,6 +1757,30 @@
         </div>
       `;
 
+      
+try {
+  await emailjs.send(
+    'service_5ed7bg9',
+    'template_2dzlgaf',
+    {
+      guest_name: name,
+      booking_date: date,
+      booking_time: time,
+      guests: guests,
+      area: area,
+      phone: phone,
+      special_request: notes
+    },
+    {
+      publicKey: 'Ggc_u2O6CbEyFuxwl'
+    }
+  );
+  console.log('預約通知寄送成功');
+} catch (error) {
+  console.error('預約通知寄送失敗：', error);
+}
+
+      
       if (isFromModal) {
         const contentBox = document.getElementById('reservation-modal-content');
         if (contentBox) contentBox.innerHTML = summaryHtml;
